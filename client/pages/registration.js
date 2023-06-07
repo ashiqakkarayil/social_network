@@ -12,7 +12,7 @@ const Registration = () => {
   {
     e.preventDefault();
     // console.log(name,email,password,secret);
-    axios.post("http://localhost:8001/api/register",{
+    axios.post("http://localhost:8000/api/register",{
       name,
       email,
       password,
