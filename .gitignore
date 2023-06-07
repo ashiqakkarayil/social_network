@@ -1,0 +1,4 @@
+
+*.pack
+client/.next/cache/webpack/client-development/index.pack.old
+client/.next/cache/webpack/client-development/index.pack
