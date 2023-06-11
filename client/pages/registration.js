@@ -1,6 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { Modal } from "antd";
+import Link from "next/link";
 
 const Registration = () => {
   const [name, setName] = useState("");
@@ -15,7 +17,7 @@ const Registration = () => {
     // console.log(name,email,password,secret);
 
     try {
-      const { data } = await axios.post("http://localhost:8000/api/register", {
+      const { data } = await axios.post(`${process.env.NEXT_PUBLIC_API}/register`, {
         name,
         email,
         password,
@@ -114,6 +116,19 @@ const Registration = () => {
             Submit
           </button>
         </form>
+        <div className="row justify-content-center align-items-center g-2">
+          <div className="col">
+            <Modal
+              title="congratulations"
+              open={ok}
+              onCancel={() => set0k(false)}
+              footer={null}
+            >
+              <p>succes</p>
+              <Link href="/login"  className="btn btn-primary btn-sm">login</Link>
+            </Modal>
+          </div>
+        </div>
       </div>
     </div>
   );
